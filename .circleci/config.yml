@@ -37,12 +37,12 @@ jobs:
   job_with_error:
     docker:
       - image: circleci/node:17.2.0
-      steps:
-        - run: exit 1
-        - run:
-            name: on error
-            command: echo "Hello Error!"
-            when: on_fail
+    steps:
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
