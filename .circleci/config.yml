@@ -7,7 +7,9 @@ version: 2.1
 jobs:
   save_hello_world_output:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:17.2.0
+        
+
     steps:
       - run: echo "Learning CI/CD with CircleCI" > ~/output.txt
       - persist_to_workspace:
@@ -17,7 +19,7 @@ jobs:
   
   print_output_file:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:17.2.0
     steps:
       - attach_workspace: 
           at: ~/
