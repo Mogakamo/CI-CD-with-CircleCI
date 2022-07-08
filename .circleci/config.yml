@@ -8,7 +8,7 @@ jobs:
   save_hello_world_output:
     docker:
       - image: circleci/node:17.2.0
-        
+        print_pipeline_id: $CIRCLE_WORKFLOW_ID
 
     steps:
       - run: echo "Learning CI/CD with CircleCI" > ~/output.txt
@@ -24,6 +24,7 @@ jobs:
       - attach_workspace: 
           at: ~/
       - run: cat ~/output.txt
+      - run: echo print_pipeline_id
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
